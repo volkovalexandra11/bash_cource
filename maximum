@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+x=1
+step=1
+ans=1
+while : 
+do
+    ans=$x
+    x=$((x+step))
+    if [[ x -lt 0 ]]; 
+    then
+        echo "Maximum number is" $ans
+        break
+    fi
+    step=$((step+1000000000))
+done;
