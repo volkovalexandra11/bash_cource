@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+for i in *; 
+do 
+    if [[ ! -d $i ]]; then
+        mv "$i" "$(echo "$i" | tr '[a-z]' '[A-Z]')"; 
+    fi
+done
