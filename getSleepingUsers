@@ -1,0 +1,7 @@
+# !/usr/bin/bash
+
+a=$(ps user=|sort|uniq -c | awk '{ print $7 }')
+for k in $(cat users.txt)
+do 
+    echo  $k | grep -v "^$a"
+done
