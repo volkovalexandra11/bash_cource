@@ -1,0 +1,13 @@
+# !/usr/bim/bash
+
+function print_reversed {
+    local fileContent i
+    readarray -t fileContent
+
+    for (( i = ${#fileContent[@]}; i--; )); do
+        printf '%s\n' "${fileContent
+[i]}"
+    done
+}
+
+print_reversed < $1
