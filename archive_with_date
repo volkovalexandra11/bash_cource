@@ -1,0 +1,18 @@
+#!usr/bin/bash
+
+function archiveAll {
+    tar czf $(date +%Y%m%d-%H%M%S)_work_full_tgz.tar.gz ~/work
+}
+
+function archiveYesterdayModifiedFiles {
+    B=$(date +%Y-%m-)$(($(date +%d)-1))
+    tar -cvpzf $(date +%Y%m%d-%H%M%S)_work_daily_tgz.tar.gz --newer "$B" ~/work
+}
+
+currentDate=$(date +%Y-%m-%d)
+lastNum=${currentDate: -1}
+targetDate=2
+
+if [ "$lastNum" -eq "$targetDate" ]; 
+then archiveAll; 
+else archiveYesterdayModifiedFiles; fi
