@@ -5,8 +5,7 @@ function print_reversed {
     readarray -t fileContent
 
     for (( i = ${#fileContent[@]}; i--; )); do
-        printf '%s\n' "${fileContent
-[i]}"
+        printf '%s\n' "${fileContent[i]}"
     done
 }
 
