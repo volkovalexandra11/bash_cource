@@ -1,0 +1,5 @@
+# !/bin/bash
+
+cur_path=$(pwd)
+
+rsync /tmp/dist_project "$cur_path" --exclude 'project.ini'
