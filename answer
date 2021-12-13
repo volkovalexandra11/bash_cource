@@ -30,7 +30,7 @@ echo "Ваш ответ... "$ans
 
 tput cup $((R+1)) $C
 
-if [ $ans = "Алена" ] || [ $ans = "Kosto" ]; then
+if [ $ans = "Алена" ] || [ $ans = "Алёна" ]; then
     echo -n "Соглашусь";
 else 
     echo "Вы неправы";
