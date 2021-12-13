@@ -1,17 +1,19 @@
 # !/usr/bin/bash
 
-# В связи с последними событиями захотелось немного расширить функционал
+# В связи с последними событиями захотелось расширить 
 
 clear
 
 MAX_COL_IND=$(($(tput cols) - 1))
 MAX_ROW_IND=$(($(tput lines) - 1))
 
-C=$((MAX_COL_IND/2 - 5))
+question="Кто лучшая фигуристка мира?"
+
+C=$((MAX_COL_IND/2 - ${#question}/2))
 R=$((MAX_ROW_IND/2))
 tput cup $R $C
 
-echo -n "Кто лучшая фигуристка мира?"
+echo -n $question
 
 tput cup $MAX_ROW_IND 0
 echo -n "?>"
