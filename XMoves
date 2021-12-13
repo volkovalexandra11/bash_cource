@@ -1,1 +1,31 @@
+# !/usr/bin/bash
 
+tput civis
+clear
+
+COLUMN_LAST_IND=$(($(tput cols) - 1))
+ROW_LAST_IND=$(($(tput lines) - 1))
+C=0
+R=0
+
+echo -n 'X'
+while :
+ do
+    read -rsn1 direction
+    if ([ "$direction" = "l" ] || [ "$direction" = "c" ]) && [[ C -lt COLUMN_LAST_IND ]]; then
+        C=$(($C+1))
+    elif ([ "$direction" = "j" ] || [ "$direction" = "x" ]) && [[ R -lt ROW_LAST_IND ]]; then
+        R=$(($R+1))
+    elif ([ "$direction" = "k" ] || [ "$direction" = "s" ]) && [[ R -gt 0 ]]; then
+        R=$(($R-1))
+    elif ([ "$direction" = "h" ] || [ "$direction" = "z" ]) && [[ C -gt 0 ]]; then
+        C=$(($C-1))
+    elif [ "$direction" = "q" ]; then
+        clear
+        tput cnorm
+        exit
+    fi
+    clear
+    tput cup $R $C 
+    echo -n 'X'
+done
