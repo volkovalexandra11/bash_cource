@@ -1,0 +1,5 @@
+for ((i=30;i<38;i++))
+do
+  line_color=`tput setaf ${i}`
+  echo -e "${color} I love JS"
+ done
