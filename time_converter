@@ -1,0 +1,16 @@
+# !/usr/bin/bash
+
+seconds="$1"
+
+t=${seconds##*[}
+t=${t%%]*}
+
+days=$(bc <<< "$t/60/60/24")
+hours=$(bc <<< "$t/60/60")
+minutes=$(bc <<< "($t/60)%60")
+sec=$(bc <<< "$t%60")
+sec=$(bc -l <<< "scale=3;$sec/1")
+
+end=${seconds##*]}
+
+echo "["$days"days "$hours"hours "$minutes"minutes "$sec"seconds]$end"
