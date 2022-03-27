@@ -1,0 +1,5 @@
+sudo systemctl start atd
+at now + 2 minutes
+at> echo qq > /dev/pts/0
+
+Сначала ничего не происходит. Потом печатается qq
