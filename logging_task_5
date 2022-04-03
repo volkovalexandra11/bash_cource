@@ -1,0 +1,6 @@
+logger -t test -p daemon.notice -- i am dead
+
+Из странного — у меня нет /var/log/syslog, это напрягает
+В /var/log/journal тоже пусто
+
+``` sudo apt-get install rsyslog ``` тоже не помогло
